@@ -13,23 +13,23 @@
 	
 	<!-- datasource connection pool -->
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
-	  <property name="driverClassName" value="${driverName}" />
-	  <property name="jdbcUrl"    value="${dbUrl}" />
-	  <property name="username"   value="${dbId}" />
-	  <property name="password"   value="${dbPwd}" />
+  		<property name="driverClassName" value="${driverName}" />
+  		<property name="jdbcUrl"    value="${dbUrl}" />
+  		<property name="username"   value="${dbId}" />
+  		<property name="password"   value="${dbPwd}" />
 	</bean>
-	
+
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" 
-	      destroy-method="close">
-	  <constructor-arg ref="hikariConfig" />
+      		destroy-method="close">
+  		<constructor-arg ref="hikariConfig" />
 	</bean>
 	
 	<!-- mybatis  SqlSessionFactory -->
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
-	  <property name="dataSource" ref="dataSource"/>
+  		<property name="dataSource" ref="dataSource"/>
+  		<property name="configLocation" value="classpath:mybatis-config.xml"/>
 	</bean>
-	
+
 	<!-- mapper scan -->
-	<mybatis-spring:scan base-package="co.yedam.app.**.mapper" />
-		
+	<mybatis-spring:scan base-package="com.yedam.app.**.mapper" />
 </beans>
