@@ -14,9 +14,8 @@
 </style>
 </head>
 <body>
-	<button type="button">
-		<a href="http://localhost/app/empInsert">
-	등록</a></button>
+	<button type="button" onclick="location.href='empInsert'">
+	등록</button>
 	<br>
 	<table>
 		<thead>
@@ -33,7 +32,7 @@
 		</thead>
 		<tbody>
 			<c:forEach items="${empList }" var="e" varStatus="sts">
-				<tr>
+				<tr onclick="location.href='empInfo?employeeId=${e.employeeId}'">
 					<td>${sts.count }</td>
 					<td>${e.employeeId }</td>
 					<td>${e.firstName }</td>
@@ -43,7 +42,9 @@
 						<fmt:formatDate value="${e.hireDate }" pattern="yyyy.MM.dd"/>
 					</td>
 					<td>${e.jobId }</td>
-					<td>${e.salary }</td>
+					<td>
+						<fmt:formatNumber value="${e.salary }" pattern="#,###"/>					
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>

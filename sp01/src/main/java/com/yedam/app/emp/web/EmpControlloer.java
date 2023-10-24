@@ -53,6 +53,7 @@ public class EmpControlloer {
 	//µî·Ï - Process
 	@PostMapping("empInsert")
 	public String insertEmpInfoProcess(EmpVO empVO) {
+
 		int empId = empService.insertEmpInfo(empVO);
 		
 		String path = null;
