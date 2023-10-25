@@ -96,7 +96,7 @@ public class EmpControlloer {
 		else {
 			msg = "정상적으로 삭제되지않았습니다. \n정보를 확인해주시길 바랍니다.\n삭제요청 : "+employeeId;
 		}
-		ratt.addAttribute("result", msg);
+		ratt.addFlashAttribute("result", msg);
 		return "redirect:empList";
 	}
 }

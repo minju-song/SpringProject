@@ -42,7 +42,6 @@
 			</form>
 
 			<script>
-
 				document.querySelector('#updateBtn').addEventListener('click', updateEmpInfo);
 
 				function updateEmpInfo(event) {
